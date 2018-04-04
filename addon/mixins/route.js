@@ -13,6 +13,7 @@ export default Mixin.create({
     return {};
   },
   model(params) {
+    console.log('params',params)
     const options = {
       sort: params.sort,
       page: {
