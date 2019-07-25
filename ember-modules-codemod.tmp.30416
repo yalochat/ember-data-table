@@ -1,0 +1,4 @@
+[2,"Logger",44,"tests/dummy/app/controllers/application.js","  actions: {\n    test(row) {\n      Ember.Logger.info(\"Hi, you reached the test action for row: \" + JSON.stringify(row));\n    },\n    menuTest() {"]
+[2,"Logger",47,"tests/dummy/app/controllers/application.js","    },\n    menuTest() {\n      Ember.Logger.info(\"Hi, you reached the general menu test action\");\n    },\n    selectionTest(selection, datatable) {"]
+[2,"Logger",51,"tests/dummy/app/controllers/application.js","    selectionTest(selection, datatable) {\n      datatable.clearSelection();\n      Ember.Logger.info(\"Hi, you reached the selection test action for selection: \" + JSON.stringify(selection));\n      selection.forEach(function(item) {\n        item.set('age', item.get('age') + 1);"]
+[2,"Logger",57,"tests/dummy/app/controllers/application.js","    },\n    clickRow(row) {\n      Ember.Logger.info(\"Custom row click action on item \" + JSON.stringify(row));\n    }\n  }"]

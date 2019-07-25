@@ -1,3 +1,4 @@
+import { findAll, find } from '@ember/test-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -10,9 +11,9 @@ test('it renders', function(assert) {
   // Handle any actions with this.on('myAction', function(val) { ... });
 
   this.render(hbs`{{data-table-content}}`);
-  assert.equal(this.$('table.data-table').length, 1, 'displays 1 data table');
+  assert.equal(findAll('table.data-table').length, 1, 'displays 1 data table');
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(find('*').textContent.trim(), '');
 
   // Template block usage:
   this.render(hbs`
@@ -21,5 +22,5 @@ test('it renders', function(assert) {
     {{/data-table-content}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(find('*').textContent.trim(), 'template block text');
 });

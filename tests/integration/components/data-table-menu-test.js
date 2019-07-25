@@ -1,3 +1,4 @@
+import { find } from '@ember/test-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -11,7 +12,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{data-table-menu}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(find('*').textContent.trim(), '');
 
   // Template block usage:
   this.render(hbs`
@@ -20,5 +21,5 @@ test('it renders', function(assert) {
     {{/data-table-menu}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(find('*').textContent.trim(), 'template block text');
 });

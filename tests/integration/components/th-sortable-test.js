@@ -1,3 +1,4 @@
+import { findAll } from '@ember/test-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -11,5 +12,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{th-sortable field='title'}}`);
 
-  assert.equal(this.$('.sortable').length, 1);
+  assert.equal(findAll('.sortable').length, 1);
 });

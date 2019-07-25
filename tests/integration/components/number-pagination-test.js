@@ -1,3 +1,4 @@
+import { findAll } from '@ember/test-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -16,5 +17,5 @@ test('it renders', function(assert) {
   });
   this.render(hbs`{{number-pagination page=page links=links}}`);
 
-  assert.equal(this.$('.data-table-pagination').length, 1);
+  assert.equal(findAll('.data-table-pagination').length, 1);
 });

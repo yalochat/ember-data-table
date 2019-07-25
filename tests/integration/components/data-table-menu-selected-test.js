@@ -1,3 +1,4 @@
+import { click, find } from '@ember/test-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -13,7 +14,7 @@ test('it renders block only if data table selection is not empty', function(asse
       template block text
     {{/data-table-menu-selected}}
   `);
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(find('*').textContent.trim(), '');
 });
 
 test('it renders selection count', function(assert) {
@@ -25,7 +26,7 @@ test('it renders selection count', function(assert) {
     {{/data-table-menu-selected}}
   `);
 
-  assert.equal(this.$('span.item-count').text().trim(), '1 item(s) selected', 'item count 1');
+  assert.equal(find('span.item-count').textContent.trim(), '1 item(s) selected', 'item count 1');
 
   this.set('data-table', { selectionIsEmpty: false, selection: ['foo', 'bar'] });
   // Template block usage:
@@ -35,10 +36,10 @@ test('it renders selection count', function(assert) {
     {{/data-table-menu-selected}}
   `);
 
-  assert.equal(this.$('span.item-count').text().trim(), '2 item(s) selected', 'item count 2');
+  assert.equal(find('span.item-count').textContent.trim(), '2 item(s) selected', 'item count 2');
 });
 
-test('calls clearSelection on cancel button click', function(assert) {
+test('calls clearSelection on cancel button click', async function(assert) {
   assert.expect(2); // 2 asserts in this test
 
   this.set('data-table', { selectionIsEmpty: false, selection: ['foo']});
@@ -52,6 +53,6 @@ test('calls clearSelection on cancel button click', function(assert) {
     {{/data-table-menu-selected}}
   `);
 
-  assert.equal(this.$('button').text().trim(), 'Cancel', 'renders a cancel button');
-  this.$('button').click();
+  assert.equal(find('button').textContent.trim(), 'Cancel', 'renders a cancel button');
+  await click('button');
 });

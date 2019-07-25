@@ -1,3 +1,4 @@
+import { findAll } from '@ember/test-helpers';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -11,5 +12,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{text-search}}`);
 
-  assert.equal(this.$('.data-table-search').length, 1);
+  assert.equal(findAll('.data-table-search').length, 1);
 });
