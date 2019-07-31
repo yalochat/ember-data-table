@@ -8,8 +8,8 @@
   {{#if hasBlock}}
     {{yield}}
   {{else}}
-    {{#each fields as |field|}}
-      {{th-sortable field=field label=field currentSorting=sort}}
+    {{#each fields as |dtField|}}
+      {{th-sortable field=dtField label=dtField currentSorting=sort}}
     {{/each}}
   {{/if}}
 </tr>

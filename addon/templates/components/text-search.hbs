@@ -1,6 +1,6 @@
 {{#if auto}}
-  {{#debounced-value val=filter wait=wait immediate=false sync=true as |value|}}
-    {{input value=value placeholder=placeholder}}
+  {{#debounced-value val=filter wait=wait immediate=false sync=true as |dtValue|}}
+    {{input value=dtValue placeholder=placeholder}}
   {{/debounced-value}}
 {{else}}
   <input value={{internalValue}} placeholder={{placeholder}} oninput={{action (mut internalValue) value="target.value"}}>

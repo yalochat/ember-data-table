@@ -4,8 +4,8 @@
     {{#if total}} of {{total}}{{/if}}
     {{#if sizeOptions}} |
       <select onchange={{action (mut size) value="target.value"}}>
-        {{#each sizeOptions as |option|}}
-          <option value={{option}} selected={{eq size option}}>{{option}}</option>
+        {{#each sizeOptions as |optn|}}
+          <option value={{optn}} selected={{eq size optn}}>{{optn}}</option>
         {{/each}}
       </select> per page
     {{/if}}
@@ -15,8 +15,8 @@
       <button {{action "changePage" links.first}} disabled={{isFirstPage}}>First</button>
       <button {{action "changePage" links.prev}} disabled={{isFirstPage}}>Previous</button>
       <select onchange={{action (mut currentPage) value="target.value"}}>
-        {{#each pageOptions as |option|}}
-          <option value={{option}} selected={{eq currentPage option}}>{{option}}</option>
+        {{#each pageOptions as |optn|}}
+          <option value={{optn}} selected={{eq currentPage optn}}>{{optn}}</option>
         {{/each}}
       </select>
       <button {{action "changePage" links.next}} disabled={{isLastPage}}>Next</button>
